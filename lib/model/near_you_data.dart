@@ -1,4 +1,4 @@
-import 'package:discount_app/near_you_model.dart';
+import 'package:discount_app/model/near_you_model.dart';
 
 class getNearYou {
   static final List<NearYouModel> NearYou = [

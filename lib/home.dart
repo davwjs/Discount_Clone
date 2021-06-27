@@ -1,5 +1,5 @@
-import 'package:discount_app/near_you_data.dart';
-import 'package:discount_app/near_you_model.dart';
+import 'package:discount_app/model/near_you_data.dart';
+import 'package:discount_app/model/near_you_model.dart';
 import 'package:discount_app/page/appearancePage.dart';
 import 'package:discount_app/page/beautyPage.dart';
 import 'package:discount_app/page/foodAndBeveragePage.dart';

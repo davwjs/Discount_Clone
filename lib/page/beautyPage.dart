@@ -1,5 +1,5 @@
-import 'package:discount_app/beauty_data.dart';
-import 'package:discount_app/beauty_model.dart';
+import 'package:discount_app/model/beauty_data.dart';
+import 'package:discount_app/model/beauty_model.dart';
 import 'package:flutter/material.dart';
 
 class BeautyPage extends StatefulWidget {
@@ -22,37 +22,62 @@ class _BeautyPageState extends State<BeautyPage> {
             return GestureDetector(
               onTap: () {},
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         margin: EdgeInsets.only(top: 20, left: 20, right: 20),
-                        height: 150,
-                        child: Image(
-                          height: 100,
-                          width: 150,
-                          image: AssetImage(beauty.image),
-                          fit: BoxFit.fill,
+                        height: 100,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image(
+                            width: 150,
+                            image: AssetImage(beauty.image),
+                            fit: BoxFit.fill,
+                          ),
                         ),
                       ),
                       Container(
                         margin: EdgeInsets.only(right: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
+                          children: <Widget>[
                             Container(
-                              child: Text(beauty.name),
+                              child: Text(
+                                beauty.name,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
                             ),
                             Container(
                               child: Text(
-                                beauty.location
+                                beauty.location,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 12,
+                                ),
                               ),
-                            )
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              child: Text(beauty.percentage,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 12,
+                                ),),
+                            ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ],
