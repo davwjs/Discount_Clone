@@ -3,6 +3,7 @@ class NearYouModel {
   String percentage;
   String image;
   String location;
+  String distance;
 
-  NearYouModel({this.name, this.image, this.location, this.percentage});
+  NearYouModel({this.name, this.image, this.location, this.percentage, this.distance});
 }

@@ -245,6 +245,26 @@ class _HomeState extends State<Home> {
                                                         nearYou.image),
                                                     fit: BoxFit.fill,
                                                   ),
+                                                  Container(
+                                                    alignment: Alignment.center,
+                                                    decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              15),
+                                                      color: Color(0xFFa5d9b3),
+                                                    ),
+                                                    margin: EdgeInsets.only(
+                                                        top: 10, left: 240),
+                                                    height: 40,
+                                                    width: 80,
+                                                    child: Text(
+                                                      nearYou.distance,
+                                                      style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize: 18,
+                                                      ),
+                                                    ),
+                                                  )
                                                 ],
                                               ),
                                               borderRadius:
@@ -268,22 +288,34 @@ class _HomeState extends State<Home> {
                                                         fontWeight:
                                                             FontWeight.bold),
                                                   ),
+                                                  SizedBox(
+                                                    height: 6,
+                                                  ),
                                                   Row(
                                                     children: [
                                                       Text(
                                                         nearYou.location,
                                                         style: TextStyle(
-                                                          fontSize: 13,
-                                                        ),
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w200),
                                                       ),
                                                       Text(
                                                         ' | ',
+                                                        style: TextStyle(
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w200),
                                                       ),
                                                       Text(
                                                         nearYou.percentage,
                                                         style: TextStyle(
-                                                          fontSize: 13,
-                                                        ),
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w200),
                                                       ),
                                                     ],
                                                   ),
@@ -306,6 +338,9 @@ class _HomeState extends State<Home> {
                         isScrollable: true,
                         indicatorColor: Color(0xFF326549),
                         indicatorWeight: 3.0,
+                        indicatorSize: TabBarIndicatorSize.label,
+                        labelStyle: TextStyle(fontWeight: FontWeight.bold),
+                        unselectedLabelStyle: TextStyle(fontSize: 10),
                         onTap: (index) {
                           setState(() {});
                         },

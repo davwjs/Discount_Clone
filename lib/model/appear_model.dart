@@ -3,6 +3,7 @@ class AppearModel {
   String image;
   String location;
   String percentage;
+  String distance;
 
-  AppearModel({this.name, this.image, this.location, this.percentage});
+  AppearModel({this.name, this.image, this.location, this.percentage, this.distance});
 }

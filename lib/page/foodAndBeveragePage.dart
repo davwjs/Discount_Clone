@@ -32,13 +32,35 @@ class _FoodAndBeveragePageState extends State<FoodAndBeveragePage> {
                       Container(
                         margin: EdgeInsets.only(top: 20, left: 20, right: 20),
                         height: 100,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image(
-                            width: 150,
-                            image: AssetImage(food.image),
-                            fit: BoxFit.fill,
-                          ),
+                        child: Stack(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image(
+                                width: 150,
+                                height: 100,
+                                image: AssetImage(food.image),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Color(0xFFa5d9b3)
+                              ),
+                              margin: EdgeInsets.only(top: 5, left: 95),
+                              height: 25,
+                              width: 50,
+                              child: Text(
+                                food.distance,
+                                style: TextStyle(
+                                    fontSize: 11,
+                                    color: Colors.black
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       Container(

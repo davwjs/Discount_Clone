@@ -28,15 +28,38 @@ class _BeautyPageState extends State<BeautyPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+                        margin:
+                            EdgeInsets.only(top: 20, left: 20, right: 20),
                         height: 100,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image(
-                            width: 150,
-                            image: AssetImage(beauty.image),
-                            fit: BoxFit.fill,
-                          ),
+                        child: Stack(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image(
+                                height: 100,
+                                width: 150,
+                                image: AssetImage(beauty.image),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Color(0xFFa5d9b3)
+                              ),
+                              margin: EdgeInsets.only(top: 5, left: 95),
+                              height: 25,
+                              width: 50,
+                              child: Text(
+                                beauty.distance,
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  color: Colors.black
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       Container(
@@ -69,11 +92,13 @@ class _BeautyPageState extends State<BeautyPage> {
                               height: 10,
                             ),
                             Container(
-                              child: Text(beauty.percentage,
+                              child: Text(
+                                beauty.percentage,
                                 style: TextStyle(
                                   fontWeight: FontWeight.w300,
                                   fontSize: 12,
-                                ),),
+                                ),
+                              ),
                             ),
                           ],
                         ),
