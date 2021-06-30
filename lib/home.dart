@@ -3,6 +3,7 @@ import 'package:discount_app/model/near_you_model.dart';
 import 'package:discount_app/page/appearancePage.dart';
 import 'package:discount_app/page/beautyPage.dart';
 import 'package:discount_app/page/foodAndBeveragePage.dart';
+import 'package:discount_app/page/nearPageDetail.dart';
 import 'package:discount_app/page/petPage.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
@@ -226,103 +227,108 @@ class _HomeState extends State<Home> {
                                     itemBuilder:
                                         (BuildContext context, int index) {
                                       NearYouModel nearYou = NearYou[index];
-                                      return Container(
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          children: [
-                                            ClipRRect(
-                                              child: Stack(
-                                                children: [
-                                                  Image(
-                                                    height: 200,
-                                                    width:
-                                                        MediaQuery.of(context)
-                                                                .size
-                                                                .width *
-                                                            0.8,
-                                                    image: AssetImage(
-                                                        nearYou.image),
-                                                    fit: BoxFit.fill,
-                                                  ),
-                                                  Container(
-                                                    alignment: Alignment.center,
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              15),
-                                                      color: Color(0xFFa5d9b3),
+                                      return InkWell(
+                                        onTap: () {
+                                          Navigator.push(context, MaterialPageRoute(builder: (context) => NearPageDetail()));
+                                        },
+                                        child: Container(
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              ClipRRect(
+                                                child: Stack(
+                                                  children: [
+                                                    Image(
+                                                      height: 200,
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              0.8,
+                                                      image: AssetImage(
+                                                          nearYou.image),
+                                                      fit: BoxFit.fill,
                                                     ),
-                                                    margin: EdgeInsets.only(
-                                                        top: 10, left: 240),
-                                                    height: 40,
-                                                    width: 80,
-                                                    child: Text(
-                                                      nearYou.distance,
+                                                    Container(
+                                                      alignment: Alignment.center,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                                13),
+                                                        color: Color(0xFFa5d9b3),
+                                                      ),
+                                                      margin: EdgeInsets.only(
+                                                          top: 10, left: 255),
+                                                      height: 30,
+                                                      width: 60,
+                                                      child: Text(
+                                                        nearYou.distance,
+                                                        style: TextStyle(
+                                                          color: Colors.black,
+                                                          fontSize: 14,
+                                                        ),
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(25),
+                                              ),
+                                              SizedBox(
+                                                height: 10,
+                                              ),
+                                              Container(
+                                                padding: EdgeInsets.only(
+                                                  left: 10,
+                                                ),
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      nearYou.name,
                                                       style: TextStyle(
-                                                        color: Colors.black,
-                                                        fontSize: 18,
-                                                      ),
+                                                          fontSize: 18,
+                                                          fontWeight:
+                                                              FontWeight.bold),
                                                     ),
-                                                  )
-                                                ],
+                                                    SizedBox(
+                                                      height: 6,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Text(
+                                                          nearYou.location,
+                                                          style: TextStyle(
+                                                              fontSize: 12,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w200),
+                                                        ),
+                                                        Text(
+                                                          ' | ',
+                                                          style: TextStyle(
+                                                              fontSize: 12,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w200),
+                                                        ),
+                                                        Text(
+                                                          nearYou.percentage,
+                                                          style: TextStyle(
+                                                              fontSize: 12,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w200),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(25),
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Container(
-                                              padding: EdgeInsets.only(
-                                                left: 10,
-                                              ),
-                                              child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    nearYou.name,
-                                                    style: TextStyle(
-                                                        fontSize: 18,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 6,
-                                                  ),
-                                                  Row(
-                                                    children: [
-                                                      Text(
-                                                        nearYou.location,
-                                                        style: TextStyle(
-                                                            fontSize: 12,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w200),
-                                                      ),
-                                                      Text(
-                                                        ' | ',
-                                                        style: TextStyle(
-                                                            fontSize: 12,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w200),
-                                                      ),
-                                                      Text(
-                                                        nearYou.percentage,
-                                                        style: TextStyle(
-                                                            fontSize: 12,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w200),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       );
                                     },
