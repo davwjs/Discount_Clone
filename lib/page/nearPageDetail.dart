@@ -14,9 +14,9 @@ class _NearPageDetailState extends State<NearPageDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: [
+        children: <Widget>[
           Stack(
-            children: [
+            children: <Widget>[
               Container(
                 height: MediaQuery.of(context).size.height * 0.4,
                 width: MediaQuery.of(context).size.width,
@@ -50,7 +50,7 @@ class _NearPageDetailState extends State<NearPageDetail> {
                                 height: 10,
                               ),
                               Text(
-                                nearYou.distance + ' | Closed at 10PM',
+                                nearYou.distance + ' | ' + nearYou.hour,
                                 style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w300,
@@ -93,17 +93,22 @@ class _NearPageDetailState extends State<NearPageDetail> {
                           ),
                           Column(
                             children: [
-                              SizedBox(height: 20,),
+                              SizedBox(
+                                height: 20,
+                              ),
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
                                 child: Image(
                                   height: 150,
                                   width: 300,
-                                  image: AssetImage(nearYou.image),
-                                  fit: BoxFit.cover,
+                                  image:
+                                      AssetImage(nearYou.discountImage[index]),
+                                  fit: BoxFit.fill,
                                 ),
                               ),
-                              SizedBox(height: 10,),
+                              SizedBox(
+                                height: 10,
+                              ),
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment:
@@ -111,7 +116,7 @@ class _NearPageDetailState extends State<NearPageDetail> {
                                 children: [
                                   Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Text(
                                         'Discount Percentage',
@@ -119,7 +124,9 @@ class _NearPageDetailState extends State<NearPageDetail> {
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold),
                                       ),
-                                      SizedBox(height: 5,),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
                                       Text(
                                         'Name',
                                         style: TextStyle(
@@ -128,29 +135,43 @@ class _NearPageDetailState extends State<NearPageDetail> {
                                       ),
                                     ],
                                   ),
-                                  Text(
-                                    'Price',
-                                    style: TextStyle(
-                                      fontSize: 13,
-                                    ),
-                                  ),
+                                  // Text(
+                                  //   'Price',
+                                  //   style: TextStyle(
+                                  //     fontSize: 13,
+                                  //   ),
+                                  // ),
                                 ],
                               ),
-                              SizedBox(height: 10,),
-                              Container(
-                                alignment: Alignment.center,
-                                height: 50,
-                                width: 300,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Color(0xFF326549),
-                                ),
-                                child: Text(
-                                  'Details', style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  showDialogFunc(
+                                    context,
+                                    nearYou.discountImage[index],
+                                    nearYou.discountTitle[index],
+                                    nearYou.discountDetail[index],
+                                    nearYou.qrCode,
+                                  );
+                                },
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  height: 50,
+                                  width: 300,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(25),
+                                    color: Color(0xFF326549),
+                                  ),
+                                  child: Text(
+                                    'Details',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ],
@@ -184,4 +205,126 @@ class _NearPageDetailState extends State<NearPageDetail> {
       ),
     );
   }
+}
+
+showDialogFunc(context, img, title, detail, qrCode) {
+  return showDialog(
+    context: context,
+    builder: (context) {
+      return Center(
+        child: Material(
+          type: MaterialType.transparency,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25),
+              color: Colors.white,
+            ),
+            padding: EdgeInsets.all(15),
+            width: MediaQuery.of(context).size.width * 0.7,
+            height: 380,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                    img,
+                    width: 200,
+                    height: 200,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  detail,
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.grey[500],
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return Center(
+                          child: Material(
+                            type: MaterialType.transparency,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                color: Colors.white,
+                              ),
+                              padding: EdgeInsets.all(15),
+                              width: MediaQuery.of(context).size.width * 0.7,
+                              height: 380,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: <Widget>[
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image.asset(
+                                      qrCode,
+                                      width: 200,
+                                      height: 200,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Please show this QR Code to cashier',
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.grey[500],
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 50,
+                    width: 200,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: Color(0xFF326549),
+                    ),
+                    child: Text(
+                      'Redeem',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      );
+    },
+  );
 }

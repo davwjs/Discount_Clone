@@ -3,18 +3,54 @@ import 'package:discount_app/model/beauty_model.dart';
 class getBeauty {
   static final List<BeautyModel> Beauty = [
     BeautyModel(
-      name: 'Cosmetic 1',
+      name: 'SEPHORA',
       image: 'assets/images/beauty1.jpeg',
       location: '11 Avenue B',
       percentage: '10% off',
       distance: '500m',
+      logo: 'assets/images/sephora.jpg',
+      hour: 'Closed at 8PM',
+      discountImage: [
+        'assets/images/coffeeDiscount1.jpg',
+        'assets/images/coffeeDiscount2.jpg',
+        'assets/images/coffeeDiscount3.jpg',
+      ],
+      discountTitle: [
+        '1 + 1 = 3',
+        '-20% off',
+        '-30% off',
+      ],
+      discountDetail: [
+        'BUY 2 GET 1 FREE',
+        'ANY ITEM 20% OFF',
+        'ANY ITEM 30% OFF',
+      ],
+      qrCode: 'assets/images/qrCode.jpg',
     ),
     BeautyModel(
-      name: 'Cosmetic 2',
+      name: 'MAC',
       image: 'assets/images/beauty2.jpeg',
       location: '11 Avenue B',
       percentage: '10% off',
       distance: '500m',
+      logo: 'assets/images/mac.jpeg',
+      hour: 'Closed at 7PM',
+      discountImage: [
+        'assets/images/coffeeDiscount1.jpg',
+        'assets/images/coffeeDiscount2.jpg',
+        'assets/images/coffeeDiscount3.jpg',
+      ],
+      discountTitle: [
+        '1 + 1 = 3',
+        '-20% off',
+        '-30% off',
+      ],
+      discountDetail: [
+        'BUY 2 GET 1 FREE',
+        'ANY ITEM 20% OFF',
+        'ANY ITEM 30% OFF',
+      ],
+      qrCode: 'assets/images/qrCode.jpg',
     ),
     BeautyModel(
       name: 'Cosmetic 3',
@@ -22,6 +58,24 @@ class getBeauty {
       location: '11 Avenue B',
       percentage: '10% off',
       distance: '300m',
+      logo: 'assets/images/sephora.jpg',
+      hour: 'Closed at 8PM',
+      discountImage: [
+        'assets/images/coffeeDiscount1.jpg',
+        'assets/images/coffeeDiscount2.jpg',
+        'assets/images/coffeeDiscount3.jpg',
+      ],
+      discountTitle: [
+        '1 + 1 = 3',
+        '-20% off',
+        '-30% off',
+      ],
+      discountDetail: [
+        'BUY 2 GET 1 FREE',
+        'ANY ITEM 20% OFF',
+        'ANY ITEM 30% OFF',
+      ],
+      qrCode: 'assets/images/qrCode.jpg',
     ),
     BeautyModel(
       name: 'Barber 1',
@@ -29,6 +83,24 @@ class getBeauty {
       location: '11 Avenue B',
       percentage: '10% off',
       distance: '200m',
+      logo: 'assets/images/sephora.jpg',
+      hour: 'Closed at 8PM',
+      discountImage: [
+        'assets/images/coffeeDiscount1.jpg',
+        'assets/images/coffeeDiscount2.jpg',
+        'assets/images/coffeeDiscount3.jpg',
+      ],
+      discountTitle: [
+        '1 + 1 = 3',
+        '-20% off',
+        '-30% off',
+      ],
+      discountDetail: [
+        'BUY 2 GET 1 FREE',
+        'ANY ITEM 20% OFF',
+        'ANY ITEM 30% OFF',
+      ],
+      qrCode: 'assets/images/qrCode.jpg',
     ),
     BeautyModel(
       name: 'Barber 2',
@@ -36,6 +108,24 @@ class getBeauty {
       location: '11 Avenue B',
       percentage: '10% off',
       distance: '700m',
+      logo: 'assets/images/sephora.jpg',
+      hour: 'Closed at 8PM',
+      discountImage: [
+        'assets/images/coffeeDiscount1.jpg',
+        'assets/images/coffeeDiscount2.jpg',
+        'assets/images/coffeeDiscount3.jpg',
+      ],
+      discountTitle: [
+        '1 + 1 = 3',
+        '-20% off',
+        '-30% off',
+      ],
+      discountDetail: [
+        'BUY 2 GET 1 FREE',
+        'ANY ITEM 20% OFF',
+        'ANY ITEM 30% OFF',
+      ],
+      qrCode: 'assets/images/qrCode.jpg',
     ),
     BeautyModel(
       name: 'Salon 1',
@@ -43,6 +133,24 @@ class getBeauty {
       location: '11 Avenue B',
       percentage: '10% off',
       distance: '400m',
+      logo: 'assets/images/sephora.jpg',
+      hour: 'Closed at 8PM',
+      discountImage: [
+        'assets/images/coffeeDiscount1.jpg',
+        'assets/images/coffeeDiscount2.jpg',
+        'assets/images/coffeeDiscount3.jpg',
+      ],
+      discountTitle: [
+        '1 + 1 = 3',
+        '-20% off',
+        '-30% off',
+      ],
+      discountDetail: [
+        'BUY 2 GET 1 FREE',
+        'ANY ITEM 20% OFF',
+        'ANY ITEM 30% OFF',
+      ],
+      qrCode: 'assets/images/qrCode.jpg',
     ),
     BeautyModel(
       name: 'Salon 2',
@@ -50,6 +158,24 @@ class getBeauty {
       location: '11 Avenue B',
       percentage: '10% off',
       distance: '450m',
+      logo: 'assets/images/sephora.jpg',
+      hour: 'Closed at 8PM',
+      discountImage: [
+        'assets/images/coffeeDiscount1.jpg',
+        'assets/images/coffeeDiscount2.jpg',
+        'assets/images/coffeeDiscount3.jpg',
+      ],
+      discountTitle: [
+        '1 + 1 = 3',
+        '-20% off',
+        '-30% off',
+      ],
+      discountDetail: [
+        'BUY 2 GET 1 FREE',
+        'ANY ITEM 20% OFF',
+        'ANY ITEM 30% OFF',
+      ],
+      qrCode: 'assets/images/qrCode.jpg',
     ),
   ];
 }
