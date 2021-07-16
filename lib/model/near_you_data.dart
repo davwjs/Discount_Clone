@@ -5,7 +5,7 @@ class getNearYou {
     NearYouModel(
       name: 'Starbucks',
       image: 'assets/images/coffee.jpg',
-      location: '11 Avenue B',
+      location: '49 -1/2 1st Ave',
       percentage: '50% off first order',
       distance: '20m',
       hour: 'Closed at 10PM',
@@ -29,8 +29,8 @@ class getNearYou {
     NearYouModel(
       name: 'Kong\'s Barber',
       image: 'assets/images/barber.jpg',
-      location: '11 Avenue B',
-      percentage: '\$20 off first order',
+      location: '18 1st Ave',
+      percentage: '\$20 off first hair cut',
       distance: '55m',
       hour: 'Closed at 8PM',
       discountImage: [
@@ -53,8 +53,8 @@ class getNearYou {
     NearYouModel(
       name: 'Amazon Books',
       image: 'assets/images/book.jpg',
-      location: '11 Avenue B',
-      percentage: '20% off first order',
+      location: '72 Spring St',
+      percentage: '\$5 off',
       distance: '50m',
       hour: 'Closed at 11PM',
       discountImage: [
